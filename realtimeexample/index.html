@@ -1,0 +1,1085 @@
+
+
+<!doctype html>
+
+
+
+
+
+
+<html  data-paige="Paige theme from https://github.com/willfaught/paige"   lang="en-us" >
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+
+
+
+<head>
+    
+
+    
+
+<meta charset="utf-8">
+
+
+
+
+
+
+
+<meta content="#0d6efd" name="msapplication-TileColor">
+
+
+    <meta content="/browserconfig.xml" name="msapplication-config">
+
+
+<meta content="https://github.com/willfaught/paige" name="theme">
+<meta content="#0d6efd" name="theme-color">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+
+<meta property="og:url" content="https://example.com/realtimeexample/">
+  <meta property="og:title" content="Nanopore workflow">
+  <meta property="og:description" content=" This is the worked example we will be performing in the field.
+The first step involves super accurate basecalling (sup) using the Dorado aligner. Once bam files are generated from that step, we start at step 2, aligning:
+1. Basecalling Download 01_basecall.sh
+#!/bin/bash # Base directory for pod5 files base_dir=&#34;/Library/MinKNOW/data/Ecuador_Workshop_Training_Pathogens_Pero/no_sample/20240913_1820_MN40667_FAY96875_60fc85db/pod5_pass&#34; # Output directory for basecalling results output_dir=&#34;/Users/mammalogy/Ecuador_Workshop/dorado-0.7.3-linux-x64/bin/01_sup_out/&#34; #dorado path dorado=&#34;/Users/mammalogy/Documents/software/dorado-0.7.0-osx-arm64/bin/dorado&#34; # Loop through each barcode directory for barcode in barcode01 barcode02 barcode03 barcode04 barcode05 barcode06 barcode07 barcode08 barcode09 barcode10 barcode11 barcode12 barcode13 barcode14 barcode15 barcode16 barcode17 barcode18 barcode19 barcode20 barcode21 barcode22 barcode23 barcode24 do $dorado basecaller dna_r10.4.1_e8.2_400bps_fast@v5.0.0 &#34;$base_dir/$barcode/&#34; &gt; &#34;$output_dir/${barcode}.bam&#34; done 2. Aligning BAM Files to a Reference Genome Download 02align.sh">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="website">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Nanopore workflow">
+  <meta name="twitter:description" content=" This is the worked example we will be performing in the field.
+The first step involves super accurate basecalling (sup) using the Dorado aligner. Once bam files are generated from that step, we start at step 2, aligning:
+1. Basecalling Download 01_basecall.sh
+#!/bin/bash # Base directory for pod5 files base_dir=&#34;/Library/MinKNOW/data/Ecuador_Workshop_Training_Pathogens_Pero/no_sample/20240913_1820_MN40667_FAY96875_60fc85db/pod5_pass&#34; # Output directory for basecalling results output_dir=&#34;/Users/mammalogy/Ecuador_Workshop/dorado-0.7.3-linux-x64/bin/01_sup_out/&#34; #dorado path dorado=&#34;/Users/mammalogy/Documents/software/dorado-0.7.0-osx-arm64/bin/dorado&#34; # Loop through each barcode directory for barcode in barcode01 barcode02 barcode03 barcode04 barcode05 barcode06 barcode07 barcode08 barcode09 barcode10 barcode11 barcode12 barcode13 barcode14 barcode15 barcode16 barcode17 barcode18 barcode19 barcode20 barcode21 barcode22 barcode23 barcode24 do $dorado basecaller dna_r10.4.1_e8.2_400bps_fast@v5.0.0 &#34;$base_dir/$barcode/&#34; &gt; &#34;$output_dir/${barcode}.bam&#34; done 2. Aligning BAM Files to a Reference Genome Download 02align.sh">
+
+
+
+    
+        <title>Nanopore workflow · Introduction</title>
+    
+
+    
+
+
+    <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+
+
+
+    <link href="/favicon.ico" rel="shortcut icon">
+
+
+
+    <link href="/favicon.png" rel="icon" type="image/png">
+
+
+
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml">
+
+
+
+    <link href="/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
+
+
+
+    <link href="/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+
+
+
+    <link color="#0d6efd" href="/safari-pinned-tab.svg" rel="mask-icon">
+
+
+
+    <link href="/site.webmanifest" rel="manifest">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+        
+        
+        
+    
+
+    
+        
+    
+
+    
+    
+    
+
+
+<link  crossorigin="anonymous"  href="/css/paige/bootstrap/6186ad141d391e4c0c10d2e9cb4eaeaadf75e809-paige.min.90e8e43521c2ef40c030c3979ea72bfc4a04397b9995dce5eadbe91e9770a96b.css"  integrity="sha256-kOjkNSHC70DAMMOXnqcr/EoEOXuZldzl6tvpHpdwqWs="   referrerpolicy="no-referrer"  rel="stylesheet">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+    
+    
+
+
+<link  crossorigin="anonymous"  href="/css/paige/bootstrap-icons/bootstrap-icons.min.540116b7267d4b2410c74086ae6497566928c6d5715900be7ce7279ad45addcd.css"  integrity="sha256-VAEWtyZ9SyQQx0CGrmSXVmkoxtVxWQC&#43;fOcnmtRa3c0="   referrerpolicy="no-referrer"  rel="stylesheet">
+
+
+
+
+
+
+    
+
+<style>
+
+    
+
+
+.paige-figure-numbered {
+    counter-increment: paige-figure-numbered;
+}
+
+.paige-figure-numbered > div > figure > figcaption::before {
+    content: "Figure " counter(paige-figure-numbered) ": ";
+}
+
+.paige-figure-numbered > div > figure > figcaption:empty::before {
+    content: "Figure " counter(paige-figure-numbered);
+}
+
+.paige-header-link {
+    opacity: 0;
+    margin-left: 0.5rem;
+    position: absolute;
+    transition: color 0.15s ease-in-out, opacity 0.15s ease-in-out;
+}
+
+.paige-header-link::after {
+    content: "#";
+}
+
+.paige-quote .blockquote-footer {
+    margin-top: 0;
+}
+
+.paige-quote blockquote {
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+blockquote {
+    padding: 0.5rem 1rem;
+    border-left: 0.25rem solid var(--bs-border-color);
+    border-right: 0.25rem solid var(--bs-body-bg);
+}
+
+td,
+th {
+    padding: 0.25rem;
+}
+
+.highlight .chroma .hl,
+.highlight .chroma .lnt {
+    display: flex;
+}
+
+.paige-row-narrow:not(:last-child),
+.paige-figure .paige-quote,
+.paige-figure .paige-video,
+.paige-figure .highlight pre.chroma,
+.paige-figure .highlight .chroma pre,
+.paige-figure .paige-quote blockquote,
+.paige-figure figure > div > :last-child,
+.paige-gallery .paige-figure,
+.paige-gallery .paige-image,
+blockquote > p:last-of-type {
+    margin-bottom: 0;
+}
+
+.paige-figure,
+.paige-gallery,
+.paige-image,
+.paige-quote,
+.paige-row-narrow:last-child,
+.paige-row-wide,
+.paige-video,
+#paige-content > *,
+table {
+    margin-bottom: 1rem;
+}
+
+.paige-header-link:focus,
+.paige-header-link:hover,
+:hover > .paige-header-link,
+:target > .paige-header-link {
+    opacity: 1;
+}
+
+
+
+
+    @media (prefers-color-scheme: dark) {
+        /* Background */ .bg { color: #c9d1d9; background-color: var(--bs-body-bg); }
+/* PreWrapper */ .chroma { color: #c9d1d9; background-color: var(--bs-body-bg); }
+/* Other */ .chroma .x {  }
+/* Error */ .chroma .err { color: #f85149 }
+/* CodeLine */ .chroma .cl {  }
+/* LineLink */ .chroma .lnlinks { outline: none; text-decoration: none; color: inherit }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #4f4f4d }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #64686c }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #6e7681 }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #ff7b72 }
+/* KeywordConstant */ .chroma .kc { color: #79c0ff }
+/* KeywordDeclaration */ .chroma .kd { color: #ff7b72 }
+/* KeywordNamespace */ .chroma .kn { color: #ff7b72 }
+/* KeywordPseudo */ .chroma .kp { color: #79c0ff }
+/* KeywordReserved */ .chroma .kr { color: #ff7b72 }
+/* KeywordType */ .chroma .kt { color: #ff7b72 }
+/* Name */ .chroma .n {  }
+/* NameAttribute */ .chroma .na {  }
+/* NameBuiltin */ .chroma .nb {  }
+/* NameBuiltinPseudo */ .chroma .bp {  }
+/* NameClass */ .chroma .nc { color: #f0883e; font-weight: bold }
+/* NameConstant */ .chroma .no { color: #79c0ff; font-weight: bold }
+/* NameDecorator */ .chroma .nd { color: #d2a8ff; font-weight: bold }
+/* NameEntity */ .chroma .ni { color: #ffa657 }
+/* NameException */ .chroma .ne { color: #f0883e; font-weight: bold }
+/* NameFunction */ .chroma .nf { color: #d2a8ff; font-weight: bold }
+/* NameFunctionMagic */ .chroma .fm {  }
+/* NameLabel */ .chroma .nl { color: #79c0ff; font-weight: bold }
+/* NameNamespace */ .chroma .nn { color: #ff7b72 }
+/* NameOther */ .chroma .nx {  }
+/* NameProperty */ .chroma .py { color: #79c0ff }
+/* NameTag */ .chroma .nt { color: #7ee787 }
+/* NameVariable */ .chroma .nv { color: #79c0ff }
+/* NameVariableClass */ .chroma .vc {  }
+/* NameVariableGlobal */ .chroma .vg {  }
+/* NameVariableInstance */ .chroma .vi {  }
+/* NameVariableMagic */ .chroma .vm {  }
+/* Literal */ .chroma .l { color: #a5d6ff }
+/* LiteralDate */ .chroma .ld { color: #79c0ff }
+/* LiteralString */ .chroma .s { color: #a5d6ff }
+/* LiteralStringAffix */ .chroma .sa { color: #79c0ff }
+/* LiteralStringBacktick */ .chroma .sb { color: #a5d6ff }
+/* LiteralStringChar */ .chroma .sc { color: #a5d6ff }
+/* LiteralStringDelimiter */ .chroma .dl { color: #79c0ff }
+/* LiteralStringDoc */ .chroma .sd { color: #a5d6ff }
+/* LiteralStringDouble */ .chroma .s2 { color: #a5d6ff }
+/* LiteralStringEscape */ .chroma .se { color: #79c0ff }
+/* LiteralStringHeredoc */ .chroma .sh { color: #79c0ff }
+/* LiteralStringInterpol */ .chroma .si { color: #a5d6ff }
+/* LiteralStringOther */ .chroma .sx { color: #a5d6ff }
+/* LiteralStringRegex */ .chroma .sr { color: #79c0ff }
+/* LiteralStringSingle */ .chroma .s1 { color: #a5d6ff }
+/* LiteralStringSymbol */ .chroma .ss { color: #a5d6ff }
+/* LiteralNumber */ .chroma .m { color: #a5d6ff }
+/* LiteralNumberBin */ .chroma .mb { color: #a5d6ff }
+/* LiteralNumberFloat */ .chroma .mf { color: #a5d6ff }
+/* LiteralNumberHex */ .chroma .mh { color: #a5d6ff }
+/* LiteralNumberInteger */ .chroma .mi { color: #a5d6ff }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #a5d6ff }
+/* LiteralNumberOct */ .chroma .mo { color: #a5d6ff }
+/* Operator */ .chroma .o { color: #ff7b72; font-weight: bold }
+/* OperatorWord */ .chroma .ow { color: #ff7b72; font-weight: bold }
+/* Punctuation */ .chroma .p {  }
+/* Comment */ .chroma .c { color: #8b949e; font-style: italic }
+/* CommentHashbang */ .chroma .ch { color: #8b949e; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #8b949e; font-style: italic }
+/* CommentSingle */ .chroma .c1 { color: #8b949e; font-style: italic }
+/* CommentSpecial */ .chroma .cs { color: #8b949e; font-weight: bold; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #8b949e; font-weight: bold; font-style: italic }
+/* CommentPreprocFile */ .chroma .cpf { color: #8b949e; font-weight: bold; font-style: italic }
+/* Generic */ .chroma .g {  }
+/* GenericDeleted */ .chroma .gd { color: #ffa198; background-color: #490202 }
+/* GenericEmph */ .chroma .ge { font-style: italic }
+/* GenericError */ .chroma .gr { color: #ffa198 }
+/* GenericHeading */ .chroma .gh { color: #79c0ff; font-weight: bold }
+/* GenericInserted */ .chroma .gi { color: #56d364; background-color: #0f5323 }
+/* GenericOutput */ .chroma .go { color: #8b949e }
+/* GenericPrompt */ .chroma .gp { color: #8b949e }
+/* GenericStrong */ .chroma .gs { font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #79c0ff }
+/* GenericTraceback */ .chroma .gt { color: #ff7b72 }
+/* GenericUnderline */ .chroma .gl { text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #6e7681 }
+
+    }
+
+    @media (prefers-color-scheme: light) {
+        /* Background */ .bg { background-color: #ffffff; }
+/* PreWrapper */ .chroma { background-color: #ffffff; }
+/* Other */ .chroma .x {  }
+/* Error */ .chroma .err { color: #a61717; background-color: #e3d2d2 }
+/* CodeLine */ .chroma .cl {  }
+/* LineLink */ .chroma .lnlinks { outline: none; text-decoration: none; color: inherit }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
+/* LineHighlight */ .chroma .hl { background-color: #ffffcc }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
+/* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
+/* Line */ .chroma .line { display: flex; }
+/* Keyword */ .chroma .k { color: #000000; font-weight: bold }
+/* KeywordConstant */ .chroma .kc { color: #000000; font-weight: bold }
+/* KeywordDeclaration */ .chroma .kd { color: #000000; font-weight: bold }
+/* KeywordNamespace */ .chroma .kn { color: #000000; font-weight: bold }
+/* KeywordPseudo */ .chroma .kp { color: #000000; font-weight: bold }
+/* KeywordReserved */ .chroma .kr { color: #000000; font-weight: bold }
+/* KeywordType */ .chroma .kt { color: #445588; font-weight: bold }
+/* Name */ .chroma .n {  }
+/* NameAttribute */ .chroma .na { color: #008080 }
+/* NameBuiltin */ .chroma .nb { color: #0086b3 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #999999 }
+/* NameClass */ .chroma .nc { color: #445588; font-weight: bold }
+/* NameConstant */ .chroma .no { color: #008080 }
+/* NameDecorator */ .chroma .nd { color: #3c5d5d; font-weight: bold }
+/* NameEntity */ .chroma .ni { color: #800080 }
+/* NameException */ .chroma .ne { color: #990000; font-weight: bold }
+/* NameFunction */ .chroma .nf { color: #990000; font-weight: bold }
+/* NameFunctionMagic */ .chroma .fm {  }
+/* NameLabel */ .chroma .nl { color: #990000; font-weight: bold }
+/* NameNamespace */ .chroma .nn { color: #555555 }
+/* NameOther */ .chroma .nx {  }
+/* NameProperty */ .chroma .py {  }
+/* NameTag */ .chroma .nt { color: #000080 }
+/* NameVariable */ .chroma .nv { color: #008080 }
+/* NameVariableClass */ .chroma .vc { color: #008080 }
+/* NameVariableGlobal */ .chroma .vg { color: #008080 }
+/* NameVariableInstance */ .chroma .vi { color: #008080 }
+/* NameVariableMagic */ .chroma .vm {  }
+/* Literal */ .chroma .l {  }
+/* LiteralDate */ .chroma .ld {  }
+/* LiteralString */ .chroma .s { color: #dd1144 }
+/* LiteralStringAffix */ .chroma .sa { color: #dd1144 }
+/* LiteralStringBacktick */ .chroma .sb { color: #dd1144 }
+/* LiteralStringChar */ .chroma .sc { color: #dd1144 }
+/* LiteralStringDelimiter */ .chroma .dl { color: #dd1144 }
+/* LiteralStringDoc */ .chroma .sd { color: #dd1144 }
+/* LiteralStringDouble */ .chroma .s2 { color: #dd1144 }
+/* LiteralStringEscape */ .chroma .se { color: #dd1144 }
+/* LiteralStringHeredoc */ .chroma .sh { color: #dd1144 }
+/* LiteralStringInterpol */ .chroma .si { color: #dd1144 }
+/* LiteralStringOther */ .chroma .sx { color: #dd1144 }
+/* LiteralStringRegex */ .chroma .sr { color: #009926 }
+/* LiteralStringSingle */ .chroma .s1 { color: #dd1144 }
+/* LiteralStringSymbol */ .chroma .ss { color: #990073 }
+/* LiteralNumber */ .chroma .m { color: #009999 }
+/* LiteralNumberBin */ .chroma .mb { color: #009999 }
+/* LiteralNumberFloat */ .chroma .mf { color: #009999 }
+/* LiteralNumberHex */ .chroma .mh { color: #009999 }
+/* LiteralNumberInteger */ .chroma .mi { color: #009999 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #009999 }
+/* LiteralNumberOct */ .chroma .mo { color: #009999 }
+/* Operator */ .chroma .o { color: #000000; font-weight: bold }
+/* OperatorWord */ .chroma .ow { color: #000000; font-weight: bold }
+/* Punctuation */ .chroma .p {  }
+/* Comment */ .chroma .c { color: #999988; font-style: italic }
+/* CommentHashbang */ .chroma .ch { color: #999988; font-style: italic }
+/* CommentMultiline */ .chroma .cm { color: #999988; font-style: italic }
+/* CommentSingle */ .chroma .c1 { color: #999988; font-style: italic }
+/* CommentSpecial */ .chroma .cs { color: #999999; font-weight: bold; font-style: italic }
+/* CommentPreproc */ .chroma .cp { color: #999999; font-weight: bold; font-style: italic }
+/* CommentPreprocFile */ .chroma .cpf { color: #999999; font-weight: bold; font-style: italic }
+/* Generic */ .chroma .g {  }
+/* GenericDeleted */ .chroma .gd { color: #000000; background-color: #ffdddd }
+/* GenericEmph */ .chroma .ge { color: #000000; font-style: italic }
+/* GenericError */ .chroma .gr { color: #aa0000 }
+/* GenericHeading */ .chroma .gh { color: #999999 }
+/* GenericInserted */ .chroma .gi { color: #000000; background-color: #ddffdd }
+/* GenericOutput */ .chroma .go { color: #888888 }
+/* GenericPrompt */ .chroma .gp { color: #555555 }
+/* GenericStrong */ .chroma .gs { font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #aaaaaa }
+/* GenericTraceback */ .chroma .gt { color: #aa0000 }
+/* GenericUnderline */ .chroma .gl { text-decoration: underline }
+/* TextWhitespace */ .chroma .w { color: #bbbbbb }
+
+    }
+
+
+@media (prefers-reduced-motion: reduce) {
+    .paige-header-link {
+        transition: none;
+    }
+}
+
+
+
+
+</style>
+
+
+    
+</head>
+
+    <body>
+
+        
+
+        <div class="container">
+            <div class="row">
+                <div class="col mt-3" id="paige-site">
+                    
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+    <header id="paige-site-header">
+        
+
+        
+            <div class="display-1 fw-bold  mb-2  paige-row-wide text-center" id="paige-site-title">Field Genomics Workshop</div>
+        
+
+        
+            <div class="lead paige-row-wide text-center" id="paige-site-description">Ecuador 2024</div>
+        
+
+        
+            
+                <nav aria-label="Menu" class="paige-row-wide" id="paige-menu">
+                    <ul class="align-items-center justify-content-center nav ">
+                        
+                            
+                            
+                            
+                            
+                            
+
+                            <li class="nav-item ">
+                                <a   class="  nav-link   text-decoration-underline "  href="/"    >Home</a>
+
+                                
+                            </li>
+                        
+                            
+                            
+                            
+                            
+                            
+
+                            <li class="nav-item ">
+                                <a   class="  nav-link   text-decoration-underline "  href="/getting-ready/"    >Getting Ready</a>
+
+                                
+                            </li>
+                        
+                            
+                            
+                            
+                            
+                            
+
+                            <li class="nav-item ">
+                                <a   class="  nav-link   text-decoration-underline "  href="/workflows/"    >Workflows</a>
+
+                                
+                            </li>
+                        
+                            
+                            
+                            
+                            
+                            
+
+                            <li class="nav-item ">
+                                <a   class="  nav-link   text-decoration-underline "  href="/slides/"    >Slides</a>
+
+                                
+                            </li>
+                        
+                            
+                            
+                            
+                            
+                            
+
+                            <li class="nav-item ">
+                                <a   class="  nav-link   text-decoration-underline "  href="/replicate-this-workshop/"    >Replicate This Workshop</a>
+
+                                
+                            </li>
+                        
+                            
+                            
+                            
+                            
+                            
+
+                            <li class="nav-item ">
+                                <a   class="  nav-link   text-decoration-underline "  href="/contactus/"    >Contact Us</a>
+
+                                
+                            </li>
+                        
+                    </ul>
+                </nav>
+            
+        
+
+        
+
+        
+    </header>
+
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+    
+        
+    
+
+
+
+
+<article class="paige-kind-section paige-published" id="paige-page">
+    <div class="align-items-center d-flex flex-column">
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <header class="mw-100" id="paige-page-header">
+        <div class="align-items-center d-flex flex-column">
+            
+
+            
+                <h1 class="fw-bold" id="paige-page-title">Nanopore workflow</h1>
+            
+
+            
+
+            
+
+            
+
+            
+
+            
+        </div>
+    </header>
+
+
+
+        
+            <main class="mw-100" id="paige-content"><div style="text-align: center;">
+<p>This is the worked example we will be performing in the field.</p>
+<p>The first step involves super accurate basecalling (sup) using the Dorado aligner. Once bam files are generated from that step, we start at step 2, aligning:</p>
+</div>
+<h2 id="1-basecalling">1. Basecalling<a aria-label="Link to this section" class="paige-header-link" href="#1-basecalling"></a></h2>
+<p><a href="../scripts/01_basecall.sh">Download 01_basecall.sh</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1"># Base directory for pod5 files</span>
+</span></span><span class="line"><span class="cl"><span class="nv">base_dir</span><span class="o">=</span><span class="s2">&#34;/Library/MinKNOW/data/Ecuador_Workshop_Training_Pathogens_Pero/no_sample/20240913_1820_MN40667_FAY96875_60fc85db/pod5_pass&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Output directory for basecalling results</span>
+</span></span><span class="line"><span class="cl"><span class="nv">output_dir</span><span class="o">=</span><span class="s2">&#34;/Users/mammalogy/Ecuador_Workshop/dorado-0.7.3-linux-x64/bin/01_sup_out/&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#dorado path</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">dorado</span><span class="o">=</span><span class="s2">&#34;/Users/mammalogy/Documents/software/dorado-0.7.0-osx-arm64/bin/dorado&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Loop through each barcode directory</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">for</span> barcode in barcode01 barcode02 barcode03 barcode04 barcode05 barcode06 barcode07 barcode08 barcode09 barcode10 barcode11 barcode12 barcode13 barcode14 barcode15 barcode16 barcode17 barcode18 barcode19 barcode20 barcode21 barcode22 barcode23 barcode24
+</span></span><span class="line"><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$dorado</span> basecaller dna_r10.4.1_e8.2_400bps_fast@v5.0.0 <span class="s2">&#34;</span><span class="nv">$base_dir</span><span class="s2">/</span><span class="nv">$barcode</span><span class="s2">/&#34;</span> &gt; <span class="s2">&#34;</span><span class="nv">$output_dir</span><span class="s2">/</span><span class="si">${</span><span class="nv">barcode</span><span class="si">}</span><span class="s2">.bam&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span></span></span></code></pre></div>
+<h2 id="2-aligning-bam-files-to-a-reference-genome">2. Aligning BAM Files to a Reference Genome<a aria-label="Link to this section" class="paige-header-link" href="#2-aligning-bam-files-to-a-reference-genome"></a></h2>
+<p><a href="../scripts/02align.sh">Download 02align.sh</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Path to the reference genome</span>
+</span></span><span class="line"><span class="cl"><span class="nv">REFERENCE_PATH</span><span class="o">=</span><span class="s2">&#34;/Library/MinKNOW/data/References/Ecusdor_ref/pema_only_09092024.fasta&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Base directory for input BAM files </span>
+</span></span><span class="line"><span class="cl"><span class="nv">INPUT_DIR</span><span class="o">=</span><span class="s2">&#34;/Users/mammalogy/Ecuador_Workshop/01_sup_out&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Output directory for aligned BAM files</span>
+</span></span><span class="line"><span class="cl"><span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="s2">&#34;/Users/mammalogy/Ecuador_Workshop/02_align_out&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Loop over barcode01.bam to barcode24.bam</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> i in <span class="k">$(</span>seq -w <span class="m">1</span> 10<span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Define input and output file names</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">INPUT_BAM</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">INPUT_DIR</span><span class="si">}</span><span class="s2">/barcode</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">.bam&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">OUTPUT_BAM</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">/barcode</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">_aligned.bam&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Run dorado aligner</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Aligning </span><span class="si">${</span><span class="nv">INPUT_BAM</span><span class="si">}</span><span class="s2">...&#34;</span>
+</span></span><span class="line"><span class="cl">    dorado aligner <span class="nv">$REFERENCE_PATH</span> <span class="nv">$INPUT_BAM</span> &gt; <span class="nv">$OUTPUT_BAM</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Finished aligning barcode</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">.bam&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span></span></span></code></pre></div>
+<h2 id="3-extracting-unaligned-reads">3. Extracting Unaligned Reads<a aria-label="Link to this section" class="paige-header-link" href="#3-extracting-unaligned-reads"></a></h2>
+<p>Next, we extract the unaligned reads from the BAM files using <code>samtools</code>. This step is crucial for isolating reads that did not align to the reference genome, allowing us to focus on non-host sequences.</p>
+<p><a href="../scripts/03_unmapped_reads.sh">Download 03_unmapped_reads.sh</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Path to samtools (ensure samtools is installed and accessible in your PATH)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">SAMTOOLS_PATH</span><span class="o">=</span><span class="s2">&#34;/opt/homebrew/bin/samtools&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Base directory for input BAM files (update this to the correct directory)</span>
+</span></span><span class="line"><span class="cl"><span class="nv">INPUT_DIR</span><span class="o">=</span><span class="s2">&#34;/Users/mammalogy/Ecuador_Workshop/02_align_out&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Output directory for unaligned BAM files</span>
+</span></span><span class="line"><span class="cl"><span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="s2">&#34;/Users/mammalogy/Ecuador_Workshop/03_unmapped_out&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Loop over barcode01.bam to barcode24.bam</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> i in <span class="k">$(</span>seq -w <span class="m">1</span> 24<span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Define input and output file names</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">INPUT_BAM</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">INPUT_DIR</span><span class="si">}</span><span class="s2">/barcode</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">_aligned.bam&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">OUTPUT_BAM</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">OUTPUT_DIR</span><span class="si">}</span><span class="s2">/barcode</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">_unaligned.bam&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># Extract unaligned reads using samtools</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Extracting unaligned reads from </span><span class="si">${</span><span class="nv">INPUT_BAM</span><span class="si">}</span><span class="s2">...&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$SAMTOOLS_PATH</span> view -b -f <span class="m">4</span> <span class="nv">$INPUT_BAM</span> &gt; <span class="nv">$OUTPUT_BAM</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Finished extracting unaligned reads for barcode</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">.bam&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span></span></span></code></pre></div>
+<h2 id="4-renaming-sequence-ids-before-database-creation">4. Renaming Sequence IDs Before Database Creation<a aria-label="Link to this section" class="paige-header-link" href="#4-renaming-sequence-ids-before-database-creation"></a></h2>
+<p>Before creating the BLAST database, we rename the sequence IDs in the FASTA file to ensure uniqueness and compatibility. This step is essential for maintaining consistency in downstream analyses.</p>
+<p><a href="../scripts/03.5_shorten_fasta_header.sh">Download 03.5_shorten_fasta_header.sh</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">awk <span class="s1">&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">BEGIN {FS=&#34; &#34;; OFS=&#34; &#34;} 
+</span></span></span><span class="line"><span class="cl"><span class="s1">/^&gt;/ {
+</span></span></span><span class="line"><span class="cl"><span class="s1">    id=substr($1, 2, 40); # Get the first 40 characters of the ID
+</span></span></span><span class="line"><span class="cl"><span class="s1">    count[id]++;          # Count occurrences of this ID
+</span></span></span><span class="line"><span class="cl"><span class="s1">    if (count[id] &gt; 1) {  # If the ID is a duplicate, add a suffix
+</span></span></span><span class="line"><span class="cl"><span class="s1">        id=id &#34;_&#34; count[id];
+</span></span></span><span class="line"><span class="cl"><span class="s1">    }
+</span></span></span><span class="line"><span class="cl"><span class="s1">    print &#34;&gt;&#34; id;         # Print the modified ID
+</span></span></span><span class="line"><span class="cl"><span class="s1">    next;
+</span></span></span><span class="line"><span class="cl"><span class="s1">}
+</span></span></span><span class="line"><span class="cl"><span class="s1">{print}&#39;</span> /Users/mammalogy/Ecuador_Workshop/Pathogen_Ref/bvbrc_nsamer_good_comp_noplant_veupathbd_allbut_vecthost_pathogen_genomes_04092024.fasta &gt; /Users/mammalogy/Ecuador_Workshop/Pathogen_Ref/shortened_unique_ids.fasta</span></span></code></pre></div>
+<h2 id="5-creating-a-blast-database">5. Creating a BLAST Database<a aria-label="Link to this section" class="paige-header-link" href="#5-creating-a-blast-database"></a></h2>
+<p>With the sequence IDs renamed, we now create a BLAST database from the reference FASTA file. This database will be used for identifying the unaligned sequences.</p>
+<p><a href="../scripts/04_blast_db_creation.sh">Download 04_blast_db_creation.sh</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Make the database</span>
+</span></span><span class="line"><span class="cl">makeblastdb -in /Users/mammalogy/Ecuador_Workshop/Pathogen_Ref/shortened_unique_ids.fasta -dbtype nucl -out /Users/mammalogy/Ecuador_Workshop/Pathogen_Ref/bvbrc_pathogen_db -title <span class="s2">&#34;Pathogen Genomes DB&#34;</span> -parse_seqids
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Print success message</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;BLAST database created successfully: </span><span class="nv">$DB_NAME</span><span class="s2">&#34;</span></span></span></code></pre></div>
+<h2 id="6-converting-bam-to-fasta">6. Converting BAM to FASTA<a aria-label="Link to this section" class="paige-header-link" href="#6-converting-bam-to-fasta"></a></h2>
+<p>Before running BLAST, we need to convert the unaligned BAM files into FASTA format. This step prepares the sequences for the BLAST search.</p>
+<p><a href="../scripts/05_convert_bam_to_fasta.sh">Download 05_convert_bam_to_fasta.sh</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Load samtools (if needed)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># module load samtools</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Set paths</span>
+</span></span><span class="line"><span class="cl"><span class="nv">BAM_DIR</span><span class="o">=</span><span class="s2">&#34;/Users/mammalogy/Ecuador_Workshop/03_unmapped_out&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">FASTA_DIR</span><span class="o">=</span><span class="s2">&#34;/Users/mammalogy/Ecuador_Workshop/03_unmapped_fasta_out&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DB_NAME</span><span class="o">=</span><span class="s2">&#34;/Users/mammalogy/Ecuador_Workshop/Pathogen_Ref/bvbrc_pathogen_db&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Create output directory for FASTA files if it doesn&#39;t exist</span>
+</span></span><span class="line"><span class="cl">mkdir -p <span class="nv">$FASTA_DIR</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Convert BAM files to FASTA</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> BAM_FILE in <span class="nv">$BAM_DIR</span>/*.bam<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">BASENAME</span><span class="o">=</span><span class="k">$(</span>basename <span class="nv">$BAM_FILE</span> .bam<span class="k">)</span>
+</span></span><span class="line"><span class="cl">    samtools fasta <span class="nv">$BAM_FILE</span> &gt; <span class="nv">$FASTA_DIR</span>/<span class="si">${</span><span class="nv">BASENAME</span><span class="si">}</span>.fasta
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Converted </span><span class="nv">$BAM_FILE</span><span class="s2"> to FASTA format&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span></span></span></code></pre></div>
+<h2 id="7-running-blast-on-fasta-files">7. Running BLAST on FASTA Files<a aria-label="Link to this section" class="paige-header-link" href="#7-running-blast-on-fasta-files"></a></h2>
+<p>The converted FASTA files are then subjected to BLAST search against the created database to identify possible pathogenic sequences.</p>
+<p><a href="../scripts/06_blast_fastas.sh">Download 06_blast_fastas.sh</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Set paths</span>
+</span></span><span class="line"><span class="cl"><span class="nv">FASTA_DIR</span><span class="o">=</span><span class="s2">&#34;/Users/mammalogy/Ecuador_Workshop/03_unmapped_fasta_out&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">DB_NAME</span><span class="o">=</span><span class="s2">&#34;/Users/mammalogy/Ecuador_Workshop/Pathogen_Ref/bvbrc_pathogen_db&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="s2">&#34;/Users/mammalogy/Ecuador_Workshop/03_blastn_results&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Create output directory for BLAST results if it doesn&#39;t exist</span>
+</span></span><span class="line"><span class="cl">mkdir -p <span class="nv">$OUTPUT_DIR</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Run BLAST for each FASTA file</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> FASTA_FILE in <span class="nv">$FASTA_DIR</span>/*.fasta<span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">BASENAME</span><span class="o">=</span><span class="k">$(</span>basename <span class="nv">$FASTA_FILE</span> .fasta<span class="k">)</span>
+</span></span><span class="line"><span class="cl">    blastn -query <span class="nv">$FASTA_FILE</span> -db <span class="nv">$DB_NAME</span> -out <span class="nv">$OUTPUT_DIR</span>/<span class="si">${</span><span class="nv">BASENAME</span><span class="si">}</span>_blastn.txt -outfmt <span class="m">6</span> -num_threads <span class="m">16</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;BLAST completed for </span><span class="nv">$FASTA_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span></span></span></code></pre></div>
+<h2 id="8-renaming-sequence-ids-in-blast-results">8. Renaming Sequence IDs in BLAST Results<a aria-label="Link to this section" class="paige-header-link" href="#8-renaming-sequence-ids-in-blast-results"></a></h2>
+<p>Finally, the sequence IDs in the BLAST output are renamed to match their original identifiers, providing clear traceability of the sequences.</p>
+<p><a href="../scripts/07_rename_seqIDs.sh">Download 07_rename_seqIDs.sh</a></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="cp">#!/bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Define directories and files</span>
+</span></span><span class="line"><span class="cl"><span class="nv">RESULTS_DIR</span><span class="o">=</span><span class="s2">&#34;/Users/mammalogy/Ecuador_Workshop/03_blastn_results&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">MAPPING_FILE</span><span class="o">=</span><span class="s2">&#34;/Users/mammalogy/Ecuador_Workshop/seq_id_mapping.txt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="s2">&#34;/Users/mammalogy/Ecuador_Workshop/03_blastn_results_with_original_ids&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Create output directory if it doesn&#39;t exist</span>
+</span></span><span class="line"><span class="cl">mkdir -p <span class="nv">$OUTPUT_DIR</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Loop through each BLAST result file from barcode01 to barcode24</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> i in <span class="k">$(</span>seq -f <span class="s2">&#34;%02g&#34;</span> <span class="m">1</span> 24<span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">INPUT_FILE</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$RESULTS_DIR</span><span class="s2">/barcode</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">_unaligned_blastn.txt&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">OUTPUT_FILE</span><span class="o">=</span><span class="s2">&#34;</span><span class="nv">$OUTPUT_DIR</span><span class="s2">/barcode</span><span class="si">${</span><span class="nv">i</span><span class="si">}</span><span class="s2">_unaligned_blastn_with_original_ids.txt&#34;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1"># Replace seq_X IDs with original IDs using awk</span>
+</span></span><span class="line"><span class="cl">    awk <span class="s1">&#39;NR==FNR {map[$1]=$2; next} $2 in map {$2=map[$2]}1&#39;</span> <span class="nv">$MAPPING_FILE</span> <span class="nv">$INPUT_FILE</span> &gt; <span class="nv">$OUTPUT_FILE</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;Processed </span><span class="nv">$INPUT_FILE</span><span class="s2"> -&gt; </span><span class="nv">$OUTPUT_FILE</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="k">done</span></span></span></code></pre></div>
+</main>
+        
+
+        
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+    <footer id="paige-site-footer">
+        
+
+        
+            <p class="paige-row-narrow text-center text-secondary" id="paige-copyright">© Alex Hey</p>
+        
+
+        
+
+        
+
+        
+    </footer>
+
+
+
+                    
+                </div>
+            </div>
+        </div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+
+
+<script  crossorigin="anonymous"   defer  integrity="sha256-gfPiYYSP&#43;RNtNeRBt45mJombFJmNf0V0Ipu785Obi0M="   referrerpolicy="no-referrer"  src="/js/paige/bootstrap/bootstrap.bundle.min.81f3e261848ff9136d35e441b78e6626899b14998d7f4574229bbbf3939b8b43.js" ></script>
+
+
+
+
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+<noscript>JavaScript is required</noscript>
+
+
+        
+    </body>
+</html>
