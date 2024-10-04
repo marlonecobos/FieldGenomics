@@ -2,198 +2,198 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.com/contactus/</loc>
+    <loc>http://localhost:4321/contactus/</loc>
     <lastmod>2024-10-02T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/getting-ready/</loc>
+    <loc>http://localhost:4321/getting-ready/</loc>
     <lastmod>2024-10-02T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/</loc>
+    <loc>http://localhost:4321/</loc>
     <lastmod>2024-10-02T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/realtimeexample/</loc>
+    <loc>http://localhost:4321/realtimeexample/</loc>
     <lastmod>2024-09-24T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/workflows/</loc>
+    <loc>http://localhost:4321/workflows/</loc>
     <lastmod>2024-09-24T00:00:00-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/authors/author-demo/</loc>
+    <loc>http://localhost:4321/authors/author-demo/</loc>
     <lastmod>2023-09-18T21:21:05-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/authors/</loc>
+    <loc>http://localhost:4321/authors/</loc>
     <lastmod>2023-09-18T21:21:05-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/</loc>
+    <loc>http://localhost:4321/categories/</loc>
     <lastmod>2023-09-18T21:21:05-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/customization/</loc>
+    <loc>http://localhost:4321/categories/customization/</loc>
     <lastmod>2023-09-18T21:21:05-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/customizations/</loc>
+    <loc>http://localhost:4321/customizations/</loc>
     <lastmod>2023-09-18T21:21:05-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/paige/</loc>
+    <loc>http://localhost:4321/categories/paige/</loc>
     <lastmod>2023-09-18T21:21:05-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/sections/</loc>
+    <loc>http://localhost:4321/tags/sections/</loc>
     <lastmod>2023-09-18T21:21:05-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/series/</loc>
+    <loc>http://localhost:4321/series/</loc>
     <lastmod>2023-09-18T21:21:05-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/series/series-demo/</loc>
+    <loc>http://localhost:4321/series/series-demo/</loc>
     <lastmod>2023-09-18T21:21:05-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/show/</loc>
+    <loc>http://localhost:4321/tags/show/</loc>
     <lastmod>2023-09-18T21:21:05-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/customizations/show/</loc>
+    <loc>http://localhost:4321/customizations/show/</loc>
     <lastmod>2023-09-18T21:21:05-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/singles/</loc>
+    <loc>http://localhost:4321/tags/singles/</loc>
     <lastmod>2023-09-18T21:21:05-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/</loc>
+    <loc>http://localhost:4321/tags/</loc>
     <lastmod>2023-09-18T21:21:05-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/style/</loc>
+    <loc>http://localhost:4321/tags/style/</loc>
     <lastmod>2023-09-18T20:21:05-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/customizations/style/</loc>
+    <loc>http://localhost:4321/customizations/style/</loc>
     <lastmod>2023-09-18T20:21:05-07:00</lastmod>
   </url><url>
-    <loc>https://example.com/post/2020-12-01-r-rmarkdown/</loc>
+    <loc>http://localhost:4321/post/2020-12-01-r-rmarkdown/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/plot/</loc>
+    <loc>http://localhost:4321/tags/plot/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://example.com/post/</loc>
+    <loc>http://localhost:4321/post/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://example.com/categories/r/</loc>
+    <loc>http://localhost:4321/categories/r/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/r-markdown/</loc>
+    <loc>http://localhost:4321/tags/r-markdown/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://example.com/tags/regression/</loc>
+    <loc>http://localhost:4321/tags/regression/</loc>
     <lastmod>2020-12-01T21:13:14-05:00</lastmod>
   </url><url>
-    <loc>https://example.com/programs/</loc>
+    <loc>http://localhost:4321/programs/</loc>
   </url><url>
-    <loc>https://example.com/workedexample/</loc>
+    <loc>http://localhost:4321/workedexample/</loc>
   </url><url>
-    <loc>https://example.com/content/alert/</loc>
+    <loc>http://localhost:4321/content/alert/</loc>
   </url><url>
-    <loc>https://example.com/tags/alerts/</loc>
+    <loc>http://localhost:4321/tags/alerts/</loc>
   </url><url>
-    <loc>https://example.com/layouts/cloud/apple/</loc>
+    <loc>http://localhost:4321/layouts/cloud/apple/</loc>
   </url><url>
-    <loc>https://example.com/layouts/cloud/banana/</loc>
+    <loc>http://localhost:4321/layouts/cloud/banana/</loc>
   </url><url>
-    <loc>https://example.com/layouts/cloud/cantaloupe/</loc>
+    <loc>http://localhost:4321/layouts/cloud/cantaloupe/</loc>
   </url><url>
-    <loc>https://example.com/tags/cloud/</loc>
+    <loc>http://localhost:4321/tags/cloud/</loc>
   </url><url>
-    <loc>https://example.com/layouts/cloud/</loc>
+    <loc>http://localhost:4321/layouts/cloud/</loc>
   </url><url>
-    <loc>https://example.com/tags/code/</loc>
+    <loc>http://localhost:4321/tags/code/</loc>
   </url><url>
-    <loc>https://example.com/shortcodes/code/</loc>
+    <loc>http://localhost:4321/shortcodes/code/</loc>
   </url><url>
-    <loc>https://example.com/categories/content/</loc>
+    <loc>http://localhost:4321/categories/content/</loc>
   </url><url>
-    <loc>https://example.com/content/</loc>
+    <loc>http://localhost:4321/content/</loc>
   </url><url>
-    <loc>https://example.com/tags/css/</loc>
+    <loc>http://localhost:4321/tags/css/</loc>
   </url><url>
-    <loc>https://example.com/tags/email/</loc>
+    <loc>http://localhost:4321/tags/email/</loc>
   </url><url>
-    <loc>https://example.com/shortcodes/email/</loc>
+    <loc>http://localhost:4321/shortcodes/email/</loc>
   </url><url>
-    <loc>https://example.com/tags/emoji/</loc>
+    <loc>http://localhost:4321/tags/emoji/</loc>
   </url><url>
-    <loc>https://example.com/content/emoji-support/</loc>
+    <loc>http://localhost:4321/content/emoji-support/</loc>
   </url><url>
-    <loc>https://example.com/shortcodes/figure/</loc>
+    <loc>http://localhost:4321/shortcodes/figure/</loc>
   </url><url>
-    <loc>https://example.com/tags/figures/</loc>
+    <loc>http://localhost:4321/tags/figures/</loc>
   </url><url>
-    <loc>https://example.com/tags/gallery/</loc>
+    <loc>http://localhost:4321/tags/gallery/</loc>
   </url><url>
-    <loc>https://example.com/shortcodes/gallery/</loc>
+    <loc>http://localhost:4321/shortcodes/gallery/</loc>
   </url><url>
-    <loc>https://example.com/tags/html/</loc>
+    <loc>http://localhost:4321/tags/html/</loc>
   </url><url>
-    <loc>https://example.com/tags/icon/</loc>
+    <loc>http://localhost:4321/tags/icon/</loc>
   </url><url>
-    <loc>https://example.com/shortcodes/icon/</loc>
+    <loc>http://localhost:4321/shortcodes/icon/</loc>
   </url><url>
-    <loc>https://example.com/shortcodes/image/</loc>
+    <loc>http://localhost:4321/shortcodes/image/</loc>
   </url><url>
-    <loc>https://example.com/tags/images/</loc>
+    <loc>http://localhost:4321/tags/images/</loc>
   </url><url>
-    <loc>https://example.com/tags/katex/</loc>
+    <loc>http://localhost:4321/tags/katex/</loc>
   </url><url>
-    <loc>https://example.com/categories/layouts/</loc>
+    <loc>http://localhost:4321/categories/layouts/</loc>
   </url><url>
-    <loc>https://example.com/layouts/</loc>
+    <loc>http://localhost:4321/layouts/</loc>
   </url><url>
-    <loc>https://example.com/tags/link/</loc>
+    <loc>http://localhost:4321/tags/link/</loc>
   </url><url>
-    <loc>https://example.com/content/link/</loc>
+    <loc>http://localhost:4321/content/link/</loc>
   </url><url>
-    <loc>https://example.com/tags/markdown/</loc>
+    <loc>http://localhost:4321/tags/markdown/</loc>
   </url><url>
-    <loc>https://example.com/content/markdown-syntax/</loc>
+    <loc>http://localhost:4321/content/markdown-syntax/</loc>
   </url><url>
-    <loc>https://example.com/tags/math/</loc>
+    <loc>http://localhost:4321/tags/math/</loc>
   </url><url>
-    <loc>https://example.com/content/math-typesetting/</loc>
+    <loc>http://localhost:4321/content/math-typesetting/</loc>
   </url><url>
-    <loc>https://example.com/content/placeholder-text/</loc>
+    <loc>http://localhost:4321/content/placeholder-text/</loc>
   </url><url>
-    <loc>https://example.com/tags/privacy/</loc>
+    <loc>http://localhost:4321/tags/privacy/</loc>
   </url><url>
-    <loc>https://example.com/tags/quotations/</loc>
+    <loc>http://localhost:4321/tags/quotations/</loc>
   </url><url>
-    <loc>https://example.com/shortcodes/quote/</loc>
+    <loc>http://localhost:4321/shortcodes/quote/</loc>
   </url><url>
-    <loc>https://example.com/tags/request/</loc>
+    <loc>http://localhost:4321/tags/request/</loc>
   </url><url>
-    <loc>https://example.com/shortcodes/request/</loc>
+    <loc>http://localhost:4321/shortcodes/request/</loc>
   </url><url>
-    <loc>https://example.com/content/rich-content/</loc>
+    <loc>http://localhost:4321/content/rich-content/</loc>
   </url><url>
-    <loc>https://example.com/tags/search/</loc>
+    <loc>http://localhost:4321/tags/search/</loc>
   </url><url>
-    <loc>https://example.com/layouts/search/</loc>
+    <loc>http://localhost:4321/layouts/search/</loc>
   </url><url>
-    <loc>https://example.com/tags/shortcodes/</loc>
+    <loc>http://localhost:4321/tags/shortcodes/</loc>
   </url><url>
-    <loc>https://example.com/categories/shortcodes/</loc>
+    <loc>http://localhost:4321/categories/shortcodes/</loc>
   </url><url>
-    <loc>https://example.com/shortcodes/</loc>
+    <loc>http://localhost:4321/shortcodes/</loc>
   </url><url>
-    <loc>https://example.com/tags/tabs/</loc>
+    <loc>http://localhost:4321/tags/tabs/</loc>
   </url><url>
-    <loc>https://example.com/shortcodes/tabs/</loc>
+    <loc>http://localhost:4321/shortcodes/tabs/</loc>
   </url><url>
-    <loc>https://example.com/tags/text/</loc>
+    <loc>http://localhost:4321/tags/text/</loc>
   </url><url>
-    <loc>https://example.com/tags/typesetting/</loc>
+    <loc>http://localhost:4321/tags/typesetting/</loc>
   </url><url>
-    <loc>https://example.com/tags/videos/</loc>
+    <loc>http://localhost:4321/tags/videos/</loc>
   </url><url>
-    <loc>https://example.com/tags/vimeo/</loc>
+    <loc>http://localhost:4321/tags/vimeo/</loc>
   </url><url>
-    <loc>https://example.com/shortcodes/vimeo/</loc>
+    <loc>http://localhost:4321/shortcodes/vimeo/</loc>
   </url><url>
-    <loc>https://example.com/tags/web-font/</loc>
+    <loc>http://localhost:4321/tags/web-font/</loc>
   </url><url>
-    <loc>https://example.com/tags/youtube/</loc>
+    <loc>http://localhost:4321/tags/youtube/</loc>
   </url><url>
-    <loc>https://example.com/shortcodes/youtube/</loc>
+    <loc>http://localhost:4321/shortcodes/youtube/</loc>
   </url>
 </urlset>
