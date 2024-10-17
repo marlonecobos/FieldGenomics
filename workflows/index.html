@@ -55,7 +55,7 @@
 <meta property="og:url" content="/workflows/">
   <meta property="og:title" content="Nanopore workflow">
   <meta property="og:description" content=" This is the worked example we will be performing in the field.
-Table of Contents Preparing Data Molecular Procedures Worked Example Real-Time Example Preparing Data Molecular Procedures DNA Extraction Download DNA Extraction Protocol Library Preparation Download Nanopore Native Barcode Library Prep PDF Flow Cell Wash and Storage Download Flow Cell Wash and Storage Protocol PDF Real-Time Example 1. Basecalling Download 01_basecall.sh">
+Table of Contents Molecular Procedures Worked Example Real-Time Example Molecular Procedures DNA Extraction Download DNA Extraction Protocol Library Preparation Download Nanopore Native Barcode Library Prep PDF Flow Cell Wash and Storage Download Flow Cell Wash and Storage Protocol PDF Worked Example This section walks you through the process of aligning Nanopore sequences to a reference genome using bwa, filtering out host-aligned sequences using samtools, and performing BLAST queries for sequence homology. Simply input your file paths at the beginning of each step.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
@@ -63,7 +63,7 @@ Table of Contents Preparing Data Molecular Procedures Worked Example Real-Time E
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Nanopore workflow">
   <meta name="twitter:description" content=" This is the worked example we will be performing in the field.
-Table of Contents Preparing Data Molecular Procedures Worked Example Real-Time Example Preparing Data Molecular Procedures DNA Extraction Download DNA Extraction Protocol Library Preparation Download Nanopore Native Barcode Library Prep PDF Flow Cell Wash and Storage Download Flow Cell Wash and Storage Protocol PDF Real-Time Example 1. Basecalling Download 01_basecall.sh">
+Table of Contents Molecular Procedures Worked Example Real-Time Example Molecular Procedures DNA Extraction Download DNA Extraction Protocol Library Preparation Download Nanopore Native Barcode Library Prep PDF Flow Cell Wash and Storage Download Flow Cell Wash and Storage Protocol PDF Worked Example This section walks you through the process of aligning Nanopore sequences to a reference genome using bwa, filtering out host-aligned sequences using samtools, and performing BLAST queries for sequence homology. Simply input your file paths at the beginning of each step.">
 
 
 
@@ -687,16 +687,11 @@ table {
 <div class="sidebar">
     <h2>Table of Contents</h2>
     <ul>
-        <li><a href="#preparing-data">Preparing Data</a></li>
         <li><a href="#molecular-procedures">Molecular Procedures</a></li>
         <li><a href="#worked-example">Worked Example</a></li>
         <li><a href="#real-time-example">Real-Time Example</a></li>
     </ul>
 </div>
-<div style="text-align: center;">
-<h2 id="preparing-data">Preparing Data<a aria-label="Link to this section" class="paige-header-link" href="#preparing-data"></a></h2>
-</div>
-<div style="text-align: center;">
 <h2 id="molecular-procedures">Molecular Procedures<a aria-label="Link to this section" class="paige-header-link" href="#molecular-procedures"></a></h2>
 <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-evenly;">
   <!-- DNA Extraction -->
@@ -720,7 +715,132 @@ table {
   </div>
 </div>
 <div style="text-align: center;">
+<style>
+pre code {
+    background-color: #2d2d2d; /* Dark gray background for the code block */
+    border: 1px solid #555555; /* Light gray border around the code block */
+    border-radius: 5px; /* Rounded corners for the box */
+    padding: 10px; /* Adds some space inside the box */
+    display: block; /* Ensures it's displayed as a block element */
+    white-space: pre-wrap; /* Ensures the code wraps properly if it's too long */
+    color: #ffffff; /* White text color for better contrast */
+}
+</style>
+<hr>
+<h1 id="worked-example">Worked Example<a aria-label="Link to this section" class="paige-header-link" href="#worked-example"></a></h1>
+</div>
+<p>This section walks you through the process of aligning Nanopore sequences to a reference genome using <code>bwa</code>, filtering out host-aligned sequences using <code>samtools</code>, and performing BLAST queries for sequence homology. Simply input your file paths at the beginning of each step.</p>
+<h1 id="download-reference-files-and-read-data">Download Reference Files and Read Data<a aria-label="Link to this section" class="paige-header-link" href="#download-reference-files-and-read-data"></a></h1>
+<p>Before starting the alignment process, make sure to download the necessary reference files and Nanopore reads. These files are required to follow along with the workflow.</p>
+<h3 id="files-to-download">Files to Download:<a aria-label="Link to this section" class="paige-header-link" href="#files-to-download"></a></h3>
+<ul>
+<li><strong>Kipp_et_al_depletion_reference.fasta</strong> (2.08 GB): This file contains the depletion reference for alignment.</li>
+<li><strong>Kipp_et_al_enrichment_reference.fasta</strong> (14.2 MB): This file contains the enrichment reference for BLAST queries.</li>
+<li><strong>SRR17281099.fasta.gz</strong> (132.2 MB): Nanopore reads in compressed FASTA format for alignment.</li>
+</ul>
+<p>You can download all the files from the shared Google Drive folder using the following link:</p>
+<p><a href="https://drive.google.com/drive/folders/1I4eXk8tMN98TJyeog8P7g4RCcRbeOBVx?usp=drive_link">Download Reference Files and Read Data</a></p>
+<p>Once you’ve downloaded these files, proceed with Step 1 to construct the FM-index for the reference genome.</p>
+<h2 id="step-1-construct-the-fm-index-based-on-the-reference-genome">Step 1: Construct the FM-index Based on the Reference Genome<a aria-label="Link to this section" class="paige-header-link" href="#step-1-construct-the-fm-index-based-on-the-reference-genome"></a></h2>
+<h3 id="variables">Variables:<a aria-label="Link to this section" class="paige-header-link" href="#variables"></a></h3>
+<ul>
+<li><strong>Reference Genome Path</strong>: <code>/mnt/backup/R/Adp_seq_workshop/sequences/Kipp_etal_depletion_reference/Kipp_etal_depletion_reference.fasta</code></li>
+</ul>
+<h3 id="code">Code:<a aria-label="Link to this section" class="paige-header-link" href="#code"></a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">reference_genome</span><span class="o">=</span><span class="s2">&#34;/mnt/backup/R/Adp_seq_workshop/sequences/Kipp_etal_depletion_reference/Kipp_etal_depletion_reference.fasta&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">bwa index <span class="nv">$reference_genome</span>
+</span></span></code></pre></div><p><strong>Description:</strong></p>
+<ul>
+<li><code>$reference_genome</code>: The variable stores the path to the reference genome file.</li>
+<li><code>bwa index</code>: Generates an index for the reference genome, which is essential for the alignment process.</li>
+</ul>
+<h2 id="step-2-align-nanopore-sequences-to-the-reference-genome">Step 2: Align Nanopore Sequences to the Reference Genome<a aria-label="Link to this section" class="paige-header-link" href="#step-2-align-nanopore-sequences-to-the-reference-genome"></a></h2>
+<h3 id="variables-1">Variables:<a aria-label="Link to this section" class="paige-header-link" href="#variables-1"></a></h3>
+<ul>
+<li><strong>Reference Genome Path</strong>: <code>/mnt/backup/R/Adp_seq_workshop/sequences/Kipp_etal_depletion_reference/Kipp_etal_depletion_reference.fasta</code></li>
+<li><strong>Nanopore Sequences Path</strong>: <code>/mnt/backup/R/Adp_seq_workshop/sequences/Kipp_etal_sequences_depletion/SRR17281099.fasta.gz</code></li>
+<li><strong>Output SAM File Path</strong>: <code>/mnt/backup/R/Adp_seq_workshop/alignment/Kipp_etal_alig_depletion.sam</code></li>
+</ul>
+<h3 id="code-1">Code:<a aria-label="Link to this section" class="paige-header-link" href="#code-1"></a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">reference_genome</span><span class="o">=</span><span class="s2">&#34;/mnt/backup/R/Adp_seq_workshop/sequences/Kipp_etal_depletion_reference/Kipp_etal_depletion_reference.fasta&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">nanopore_sequences</span><span class="o">=</span><span class="s2">&#34;/mnt/backup/R/Adp_seq_workshop/sequences/Kipp_etal_sequences_depletion/SRR17281099.fasta.gz&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">output_sam</span><span class="o">=</span><span class="s2">&#34;/mnt/backup/R/Adp_seq_workshop/alignment/Kipp_etal_alig_depletion.sam&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">bwa mem -x ont2d <span class="nv">$reference_genome</span> <span class="nv">$nanopore_sequences</span> &gt; <span class="nv">$output_sam</span>
+</span></span></code></pre></div><p><strong>Description:</strong></p>
+<ul>
+<li><code>$reference_genome</code>: Path to the reference genome.</li>
+<li><code>$nanopore_sequences</code>: Path to the Nanopore sequence file.</li>
+<li><code>$output_sam</code>: Output SAM file where the alignment results will be saved.</li>
+</ul>
+<h2 id="step-3-filter-out-host-aligned-sequences">Step 3: Filter Out Host-Aligned Sequences<a aria-label="Link to this section" class="paige-header-link" href="#step-3-filter-out-host-aligned-sequences"></a></h2>
+<h3 id="variables-2">Variables:<a aria-label="Link to this section" class="paige-header-link" href="#variables-2"></a></h3>
+<ul>
+<li><strong>Input SAM File Path</strong>: <code>/mnt/backup/R/Adp_seq_workshop/alignment/Kipp_etal_alig_depletion.sam</code></li>
+<li><strong>Output Unmapped Reads Path</strong>: <code>Kipp_etal_unmapped_depletion.fasta</code></li>
+</ul>
+<h3 id="code-2">Code:<a aria-label="Link to this section" class="paige-header-link" href="#code-2"></a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">input_sam</span><span class="o">=</span><span class="s2">&#34;/mnt/backup/R/Adp_seq_workshop/alignment/Kipp_etal_alig_depletion.sam&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">output_unmapped</span><span class="o">=</span><span class="s2">&#34;/mnt/backup/R/Adp_seq_workshop/alignment/Kipp_etal_unmapped_depletion.fasta&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">samtools fasta -f <span class="m">4</span> <span class="nv">$input_sam</span> &gt; <span class="nv">$output_unmapped</span>
+</span></span></code></pre></div><p><strong>Description:</strong></p>
+<ul>
+<li><code>$input_sam</code>: Input SAM file containing the alignment results.</li>
+<li><code>$output_unmapped</code>: Output FASTA file where unmapped reads will be saved.</li>
+</ul>
+<h2 id="step-4-set-up-blast-for-sequence-homology">Step 4: Set Up BLAST for Sequence Homology<a aria-label="Link to this section" class="paige-header-link" href="#step-4-set-up-blast-for-sequence-homology"></a></h2>
+<h3 id="variables-3">Variables:<a aria-label="Link to this section" class="paige-header-link" href="#variables-3"></a></h3>
+<ul>
+<li><strong>BLAST Path</strong>: <code>/mnt/backup/GitHub/ncbi-blast-2.16.0+/bin</code></li>
+<li><strong>BLAST Database Directory</strong>: <code>/mnt/backup/R/Adp_seq_workshop/blastdb</code></li>
+</ul>
+<h3 id="code-3">Code:<a aria-label="Link to this section" class="paige-header-link" href="#code-3"></a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">blast_path</span><span class="o">=</span><span class="s2">&#34;/mnt/backup/GitHub/ncbi-blast-2.16.0+/bin&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">blastdb_path</span><span class="o">=</span><span class="s2">&#34;/mnt/backup/R/Adp_seq_workshop/blastdb&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$blast_path</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">BLASTDB</span><span class="o">=</span><span class="nv">$blastdb_path</span>
+</span></span></code></pre></div><p><strong>Description:</strong></p>
+<ul>
+<li><code>$blast_path</code>: Path to the BLAST installation directory.</li>
+<li><code>$blastdb_path</code>: Path to the directory where the BLAST database is stored.</li>
+</ul>
+<h2 id="step-5-perform-a-blast-query-against-the-predefined-database">Step 5: Perform a BLAST Query Against the Predefined Database<a aria-label="Link to this section" class="paige-header-link" href="#step-5-perform-a-blast-query-against-the-predefined-database"></a></h2>
+<h3 id="variables-4">Variables:<a aria-label="Link to this section" class="paige-header-link" href="#variables-4"></a></h3>
+<ul>
+<li><strong>Reference FASTA for BLASTDB</strong>: <code>sequences/Kipp_etal_enrichment_reference/Kipp_etal_enrichment_reference.fasta</code></li>
+<li><strong>BLAST Database Title</strong>: <code>Kipp_etal_enrichment</code></li>
+<li><strong>BLASTDB Directory</strong>: <code>/mnt/backup/R/Adp_seq_workshop/blastdb</code></li>
+<li><strong>Unmapped Reads Path</strong>: <code>alignment/Kipp_etal_unmapped_depletion.fasta</code></li>
+<li><strong>BLAST Results Path</strong>: <code>blast_results/Kipp_etal_blast_results.txt</code></li>
+</ul>
+<h3 id="code-4">Code:<a aria-label="Link to this section" class="paige-header-link" href="#code-4"></a></h3>
+<h4 id="create-blast-database">Create BLAST Database:<a aria-label="Link to this section" class="paige-header-link" href="#create-blast-database"></a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">blastdb_fasta</span><span class="o">=</span><span class="s2">&#34;sequences/Kipp_etal_enrichment_reference/Kipp_etal_enrichment_reference.fasta&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">blastdb_title</span><span class="o">=</span><span class="s2">&#34;Kipp_etal_enrichment&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">blastdb_dir</span><span class="o">=</span><span class="s2">&#34;/mnt/backup/R/Adp_seq_workshop/blastdb&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">makeblastdb -in <span class="nv">$blastdb_fasta</span> -parse_seqids -blastdb_version <span class="m">5</span> -title <span class="nv">$blastdb_title</span> -dbtype nucl
+</span></span></code></pre></div><h4 id="run-blast-query">Run BLAST Query:<a aria-label="Link to this section" class="paige-header-link" href="#run-blast-query"></a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">unmapped_reads</span><span class="o">=</span><span class="s2">&#34;alignment/Kipp_etal_unmapped_depletion.fasta&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">blast_output</span><span class="o">=</span><span class="s2">&#34;blast_results/Kipp_etal_blast_results.txt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">blastdb_fasta</span><span class="o">=</span><span class="s2">&#34;blastdb/Kipp_etal_enrichment_reference.fasta&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">blastn -query <span class="nv">$unmapped_reads</span> -db <span class="nv">$blastdb_fasta</span> -out <span class="nv">$blast_output</span>
+</span></span></code></pre></div><p><strong>Description:</strong></p>
+<ul>
+<li><code>$blastdb_fasta</code>: Path to the reference FASTA file used to create the BLAST database.</li>
+<li><code>$blastdb_title</code>: Title for the BLAST database.</li>
+<li><code>$unmapped_reads</code>: Input FASTA file containing unmapped reads.</li>
+<li><code>$blast_output</code>: Output file where BLAST results will be saved.</li>
+</ul>
+<p>With these modular steps, users only need to input their file paths in the variables section for each step, and the commands will automatically reference those variables in the actual command.</p>
+<hr>
 <h2 id="real-time-example">Real-Time Example<a aria-label="Link to this section" class="paige-header-link" href="#real-time-example"></a></h2>
+<p><strong>Description:</strong>
+This section contains all of the jobs for the analysis Alex will be performing with the Nanopore data generated during this workshop. It is not for the example the participants will be working through, but can be used as a resource for future nanopore analysis.</p>
 </div>
 <h2 id="1-basecalling">1. Basecalling<a aria-label="Link to this section" class="paige-header-link" href="#1-basecalling"></a></h2>
 <p><a href="../scripts/01_basecall.sh">Download 01_basecall.sh</a></p>

@@ -53,21 +53,17 @@
 <meta content="width=device-width, initial-scale=1" name="viewport">
 
 <meta property="og:url" content="/programs/">
-  <meta property="og:description" content="Programs This page lists all the programs and tools used in the worked example. It includes links to the official websites and installation instructions.
-Dorado Description: Dorado is a basecalling and alignment tool used for processing Oxford Nanopore sequencing data.
-Website: Dorado GitHub
-Installation:
-# For Linux (generic) wget https://github.com/nanoporetech/dorado/releases/download/v0.7.3/dorado-0.7.3-linux-x64.tar.gz tar -xvzf dorado-0.7.3-linux-x64.tar.gz cd dorado-0.7.3-linux-x64/bin/ export PATH=$PATH:$PWD # For MacOS (with Homebrew) brew install dorado # For MacOS (without Homebrew) wget https://github.com/nanoporetech/dorado/releases/download/v0.7.3/dorado-0.7.3-macos-x64.tar.gz tar -xzvf dorado-0.7.3-macos-x64.tar.gz cd dorado-0.7.3-macos-x64/bin/ export PATH=$PATH:$PWD # For Windows (using WSL) # Make sure WSL is installed and a Linux distribution (e.g., Ubuntu) is set up. wget https://github.com/nanoporetech/dorado/releases/download/v0.7.3/dorado-0.7.3-linux-x64.tar.gz tar -xvzf dorado-0.7.3-linux-x64.tar.gz cd dorado-0.7.3-linux-x64/bin/ export PATH=$PATH:$PWD Samtools Description: Samtools is a suite of programs for interacting with high-throughput sequencing data. It is used for extracting unaligned reads and converting BAM files to FASTA.">
+  <meta property="og:description" content="Programs Suggested for Windows Users: Install Linux on Windows Note: If you’re using Windows, it’s highly recommended to set up a Linux environment (such as Ubuntu) through the Windows Subsystem for Linux (WSL). Follow these steps to get started.
+Step 1: Open Command Prompt and Run WSL Installation Open your Command Prompt application and run the following command to install WSL:
+wsl --install Step 2: Install Ubuntu and Set Up Your User Follow the instructions to install Ubuntu, then set up a username and password for your new Ubuntu environment. You’ll be required to restart your computer during this process.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
 
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:description" content="Programs This page lists all the programs and tools used in the worked example. It includes links to the official websites and installation instructions.
-Dorado Description: Dorado is a basecalling and alignment tool used for processing Oxford Nanopore sequencing data.
-Website: Dorado GitHub
-Installation:
-# For Linux (generic) wget https://github.com/nanoporetech/dorado/releases/download/v0.7.3/dorado-0.7.3-linux-x64.tar.gz tar -xvzf dorado-0.7.3-linux-x64.tar.gz cd dorado-0.7.3-linux-x64/bin/ export PATH=$PATH:$PWD # For MacOS (with Homebrew) brew install dorado # For MacOS (without Homebrew) wget https://github.com/nanoporetech/dorado/releases/download/v0.7.3/dorado-0.7.3-macos-x64.tar.gz tar -xzvf dorado-0.7.3-macos-x64.tar.gz cd dorado-0.7.3-macos-x64/bin/ export PATH=$PATH:$PWD # For Windows (using WSL) # Make sure WSL is installed and a Linux distribution (e.g., Ubuntu) is set up. wget https://github.com/nanoporetech/dorado/releases/download/v0.7.3/dorado-0.7.3-linux-x64.tar.gz tar -xvzf dorado-0.7.3-linux-x64.tar.gz cd dorado-0.7.3-linux-x64/bin/ export PATH=$PATH:$PWD Samtools Description: Samtools is a suite of programs for interacting with high-throughput sequencing data. It is used for extracting unaligned reads and converting BAM files to FASTA.">
+  <meta name="twitter:description" content="Programs Suggested for Windows Users: Install Linux on Windows Note: If you’re using Windows, it’s highly recommended to set up a Linux environment (such as Ubuntu) through the Windows Subsystem for Linux (WSL). Follow these steps to get started.
+Step 1: Open Command Prompt and Run WSL Installation Open your Command Prompt application and run the following command to install WSL:
+wsl --install Step 2: Install Ubuntu and Set Up Your User Follow the instructions to install Ubuntu, then set up a username and password for your new Ubuntu environment. You’ll be required to restart your computer during this process.">
 
 
 
@@ -666,108 +662,197 @@ table {
 
         
             <main class="mw-100" id="paige-content"><h1 id="programs">Programs<a aria-label="Link to this section" class="paige-header-link" href="#programs"></a></h1>
-<p>This page lists all the programs and tools used in the worked example. It includes links to the official websites and installation instructions.</p>
+<h2 id="suggested-for-windows-users-install-linux-on-windows">Suggested for Windows Users: Install Linux on Windows<a aria-label="Link to this section" class="paige-header-link" href="#suggested-for-windows-users-install-linux-on-windows"></a></h2>
+<p><strong>Note:</strong> If you&rsquo;re using Windows, it’s highly recommended to set up a Linux environment (such as Ubuntu) through the Windows Subsystem for Linux (WSL). Follow these steps to get started.</p>
+<h3 id="step-1-open-command-prompt-and-run-wsl-installation">Step 1: Open Command Prompt and Run WSL Installation<a aria-label="Link to this section" class="paige-header-link" href="#step-1-open-command-prompt-and-run-wsl-installation"></a></h3>
+<p>Open your <strong>Command Prompt</strong> application and run the following command to install WSL:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">wsl --install
+</span></span></code></pre></div><h3 id="step-2-install-ubuntu-and-set-up-your-user">Step 2: Install Ubuntu and Set Up Your User<a aria-label="Link to this section" class="paige-header-link" href="#step-2-install-ubuntu-and-set-up-your-user"></a></h3>
+<p>Follow the instructions to install Ubuntu, then set up a username and password for your new Ubuntu environment. You’ll be required to restart your computer during this process.</p>
+<p>If you need more details or want to download Ubuntu directly, visit the <a href="https://ubuntu.com/download">official Ubuntu website</a>.</p>
+<h3 id="step-3-prepare-your-ubuntu-terminal">Step 3: Prepare Your Ubuntu Terminal<a aria-label="Link to this section" class="paige-header-link" href="#step-3-prepare-your-ubuntu-terminal"></a></h3>
+<p>Once your Ubuntu terminal is ready, run the following commands to test and install necessary tools for future steps:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo add-apt-repository universe
+</span></span><span class="line"><span class="cl">sudo apt update
+</span></span><span class="line"><span class="cl">sudo apt install git-all  
+</span></span><span class="line"><span class="cl">sudo apt install bzip2
+</span></span><span class="line"><span class="cl">sudo apt install build-essential
+</span></span><span class="line"><span class="cl">sudo apt install zlib1g-dev
+</span></span><span class="line"><span class="cl">sudo apt install libncurses5-dev libncursesw5-dev
+</span></span><span class="line"><span class="cl">sudo apt install liblzma-dev
+</span></span><span class="line"><span class="cl">sudo apt install libcurl4-openssl-dev
+</span></span><span class="line"><span class="cl">sudo apt install gobjc gfortran gnat
+</span></span><span class="line"><span class="cl">sudo apt install manpages-dev
+</span></span></code></pre></div><h3 id="step-4-create-directories-for-your-field-genomics-programs">Step 4: Create Directories for Your Field Genomics Programs<a aria-label="Link to this section" class="paige-header-link" href="#step-4-create-directories-for-your-field-genomics-programs"></a></h3>
+<p>Before installing programs, create a main directory and a subdirectory for software installations. Run the following commands:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mkdir FieldGenomics
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> FieldGenomics
+</span></span><span class="line"><span class="cl">mkdir software
+</span></span></code></pre></div><p>You are now ready to start installing the necessary programs.</p>
+<div style="margin-bottom: 20px;">
+  <button id="realtimeButton" class="tab-button" onclick="showSection('realtime')">Real-time analysis programs</button>
+  <button id="workedExampleButton" class="tab-button" onclick="showSection('workedExample')">Worked Example Programs</button>
+</div>
+<!-- Real-time Analysis Programs Section -->
+<div id="realtime" style="display:none;">
+<p><strong>Description</strong>: This are the programs you may need if you wish to replicate the analysis performed in the field on the data we generate with the Nanopore run. The participants do not need Dorado for the Worked Example they will be performing on their computers.</p>
 <h2 id="dorado">Dorado<a aria-label="Link to this section" class="paige-header-link" href="#dorado"></a></h2>
 <p><strong>Description</strong>: Dorado is a basecalling and alignment tool used for processing Oxford Nanopore sequencing data.</p>
 <p><strong>Website</strong>: <a href="https://github.com/nanoporetech/dorado">Dorado GitHub</a></p>
 <p><strong>Installation</strong>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># For Linux (generic)</span>
-</span></span><span class="line"><span class="cl">wget https://github.com/nanoporetech/dorado/releases/download/v0.7.3/dorado-0.7.3-linux-x64.tar.gz
-</span></span><span class="line"><span class="cl">tar -xvzf dorado-0.7.3-linux-x64.tar.gz
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> dorado-0.7.3-linux-x64/bin/
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span>
+</span></span><span class="line"><span class="cl">  wget https://github.com/nanoporetech/dorado/releases/download/v0.7.3/dorado-0.7.3-linux-x64.tar.gz
+</span></span><span class="line"><span class="cl">  tar -xvzf dorado-0.7.3-linux-x64.tar.gz
+</span></span><span class="line"><span class="cl">  <span class="nb">cd</span> dorado-0.7.3-linux-x64/bin/
+</span></span><span class="line"><span class="cl">  <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># For MacOS (with Homebrew)</span>
-</span></span><span class="line"><span class="cl">brew install dorado
+</span></span><span class="line"><span class="cl">  <span class="c1"># For MacOS (with Homebrew)</span>
+</span></span><span class="line"><span class="cl">  brew install dorado
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># For MacOS (without Homebrew)</span>
-</span></span><span class="line"><span class="cl">wget https://github.com/nanoporetech/dorado/releases/download/v0.7.3/dorado-0.7.3-macos-x64.tar.gz
-</span></span><span class="line"><span class="cl">tar -xzvf dorado-0.7.3-macos-x64.tar.gz
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> dorado-0.7.3-macos-x64/bin/
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># For MacOS (without Homebrew)</span>
+</span></span><span class="line"><span class="cl">  wget https://github.com/nanoporetech/dorado/releases/download/v0.7.3/dorado-0.7.3-macos-x64.tar.gz
+</span></span><span class="line"><span class="cl">  tar -xzvf dorado-0.7.3-macos-x64.tar.gz
+</span></span><span class="line"><span class="cl">  <span class="nb">cd</span> dorado-0.7.3-macos-x64/bin/
+</span></span><span class="line"><span class="cl">  <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># For Windows (using WSL)</span>
-</span></span><span class="line"><span class="cl"><span class="c1"># Make sure WSL is installed and a Linux distribution (e.g., Ubuntu) is set up.</span>
-</span></span><span class="line"><span class="cl">wget https://github.com/nanoporetech/dorado/releases/download/v0.7.3/dorado-0.7.3-linux-x64.tar.gz
-</span></span><span class="line"><span class="cl">tar -xvzf dorado-0.7.3-linux-x64.tar.gz
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> dorado-0.7.3-linux-x64/bin/
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span>
-</span></span></code></pre></div><h2 id="samtools">Samtools<a aria-label="Link to this section" class="paige-header-link" href="#samtools"></a></h2>
+</span></span><span class="line"><span class="cl">  <span class="c1"># For Windows (using WSL)</span>
+</span></span><span class="line"><span class="cl">  wget https://github.com/nanoporetech/dorado/releases/download/v0.7.3/dorado-0.7.3-linux-x64.tar.gz
+</span></span><span class="line"><span class="cl">  tar -xvzf dorado-0.7.3-linux-x64.tar.gz
+</span></span><span class="line"><span class="cl">  <span class="nb">cd</span> dorado-0.7.3-linux-x64/bin/
+</span></span><span class="line"><span class="cl">  <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span></span></span></code></pre></div>
+</div>
+<!-- Worked Example Programs Section -->
+<div id="workedExample" style="display:none;">
+<p><strong>Description</strong>: This are the programs everyone will need to complete the example the workshop participants will walk through.</p>
+<h2 id="samtools">Samtools<a aria-label="Link to this section" class="paige-header-link" href="#samtools"></a></h2>
 <p><strong>Description</strong>: Samtools is a suite of programs for interacting with high-throughput sequencing data. It is used for extracting unaligned reads and converting BAM files to FASTA.</p>
 <p><strong>Website</strong>: <a href="http://www.htslib.org/">Samtools Website</a></p>
 <p><strong>Installation</strong>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># For Linux (generic)</span>
-</span></span><span class="line"><span class="cl">wget https://github.com/samtools/samtools/releases/download/1.17/samtools-1.17.tar.bz2
-</span></span><span class="line"><span class="cl">tar -xvjf samtools-1.17.tar.bz2
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> samtools-1.17
-</span></span><span class="line"><span class="cl">make
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">  <span class="c1"># For Linux (generic)</span>
+</span></span><span class="line"><span class="cl">  wget https://github.com/samtools/samtools/releases/download/1.17/samtools-1.17.tar.bz2
+</span></span><span class="line"><span class="cl">  tar -xvjf samtools-1.17.tar.bz2
+</span></span><span class="line"><span class="cl">  <span class="nb">cd</span> samtools-1.17
+</span></span><span class="line"><span class="cl">  make
+</span></span><span class="line"><span class="cl">  <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># For MacOS (with Homebrew)</span>
-</span></span><span class="line"><span class="cl">brew install samtools
+</span></span><span class="line"><span class="cl">  <span class="c1"># For MacOS (with Homebrew)</span>
+</span></span><span class="line"><span class="cl">  brew install samtools
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># For MacOS (without Homebrew)</span>
-</span></span><span class="line"><span class="cl">wget https://github.com/samtools/samtools/releases/download/1.17/samtools-1.17-macos.tar.bz2
-</span></span><span class="line"><span class="cl">tar -xvjf samtools-1.17-macos.tar.bz2
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> samtools-1.17
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># For MacOS (without Homebrew)</span>
+</span></span><span class="line"><span class="cl">  wget https://github.com/samtools/samtools/releases/download/1.17/samtools-1.17-macos.tar.bz2
+</span></span><span class="line"><span class="cl">  tar -xvjf samtools-1.17-macos.tar.bz2
+</span></span><span class="line"><span class="cl">  <span class="nb">cd</span> samtools-1.17
+</span></span><span class="line"><span class="cl">  <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># For Windows (using WSL)</span>
-</span></span><span class="line"><span class="cl">wget https://github.com/samtools/samtools/releases/download/1.17/samtools-1.17.tar.bz2
-</span></span><span class="line"><span class="cl">tar -xvjf samtools-1.17.tar.bz2
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> samtools-1.17
-</span></span><span class="line"><span class="cl">make
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span>
-</span></span></code></pre></div><h1 id="heading"><a aria-label="Link to this section" class="paige-header-link" href="#heading"></a></h1>
+</span></span><span class="line"><span class="cl">  <span class="c1"># For Windows (using WSL)</span>
+</span></span><span class="line"><span class="cl">  wget https://github.com/samtools/samtools/releases/download/1.17/samtools-1.17.tar.bz2
+</span></span><span class="line"><span class="cl">  tar -xvjf samtools-1.17.tar.bz2
+</span></span><span class="line"><span class="cl">  <span class="nb">cd</span> samtools-1.17
+</span></span><span class="line"><span class="cl">  make
+</span></span><span class="line"><span class="cl">  <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span></span></span></code></pre></div>
 <h2 id="blast">BLAST+<a aria-label="Link to this section" class="paige-header-link" href="#blast"></a></h2>
-<p><strong>Description</strong>: BLAST+ is a suite of tools to perform similarity searches against nucleotide and protein databases. We also used blastdb from this.</p>
+<p><strong>Description</strong>: BLAST+ is a suite of tools to perform similarity searches against nucleotide and protein databases. We also used blastdb from this. You can either download the latest verseion of BLAST <a href="https://ftp.ncbi.nlm.nih.gov/blast/executables/LATEST/">here</a> or use the one we provided.</p>
 <p><strong>Website</strong>: <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download">BLAST+ NCBI</a></p>
 <p><strong>Installation</strong>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># For Linux (generic)</span>
-</span></span><span class="line"><span class="cl">wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.14.0/ncbi-blast-2.14.0+-x64-linux.tar.gz
-</span></span><span class="line"><span class="cl">tar -xzvf ncbi-blast-2.14.0+-x64-linux.tar.gz
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/ncbi-blast-2.14.0+/bin
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">  <span class="c1"># For Linux (generic)</span>
+</span></span><span class="line"><span class="cl">  wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.14.0/ncbi-blast-2.14.0+-x64-linux.tar.gz
+</span></span><span class="line"><span class="cl">  tar -xzvf ncbi-blast-2.14.0+-x64-linux.tar.gz
+</span></span><span class="line"><span class="cl">  <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/ncbi-blast-2.14.0+/bin
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># For MacOS (with Homebrew)</span>
-</span></span><span class="line"><span class="cl">brew install blast
+</span></span><span class="line"><span class="cl">  <span class="c1"># For MacOS (with Homebrew)</span>
+</span></span><span class="line"><span class="cl">  brew install blast
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># For MacOS (without Homebrew)</span>
-</span></span><span class="line"><span class="cl">wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.14.0/ncbi-blast-2.14.0+-x64-macosx.tar.gz
-</span></span><span class="line"><span class="cl">tar -xzvf ncbi-blast-2.14.0+-x64-macosx.tar.gz
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/ncbi-blast-2.14.0+/bin
+</span></span><span class="line"><span class="cl">  <span class="c1"># For MacOS (without Homebrew)</span>
+</span></span><span class="line"><span class="cl">  wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.14.0/ncbi-blast-2.14.0+-x64-macosx.tar.gz
+</span></span><span class="line"><span class="cl">  tar -xzvf ncbi-blast-2.14.0+-x64-macosx.tar.gz
+</span></span><span class="line"><span class="cl">  <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/ncbi-blast-2.14.0+/bin
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># For Windows (using WSL)</span>
-</span></span><span class="line"><span class="cl">wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.14.0/ncbi-blast-2.14.0+-x64-linux.tar.gz
-</span></span><span class="line"><span class="cl">tar -xzvf ncbi-blast-2.14.0+-x64-linux.tar.gz
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/ncbi-blast-2.14.0+/bin
-</span></span></code></pre></div><h2 id="bwa">BWA<a aria-label="Link to this section" class="paige-header-link" href="#bwa"></a></h2>
+</span></span><span class="line"><span class="cl">  <span class="c1"># For Windows (using WSL)</span>
+</span></span><span class="line"><span class="cl">  wget ftp://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.14.0/ncbi-blast-2.14.0+-x64-linux.tar.gz
+</span></span><span class="line"><span class="cl">  tar -xzvf ncbi-blast-2.14.0+-x64-linux.tar.gz
+</span></span><span class="line"><span class="cl">  <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/ncbi-blast-2.14.0+/bin</span></span></code></pre></div>
+<h2 id="bwa">BWA<a aria-label="Link to this section" class="paige-header-link" href="#bwa"></a></h2>
 <p><strong>Description</strong>: BWA (Burrows-Wheeler Aligner) is a software package for mapping low-divergent sequences against a large reference genome, widely used in genome assembly and variant calling.</p>
 <p><strong>Website</strong>: <a href="https://github.com/lh3/bwa">BWA GitHub</a></p>
 <p><strong>Installation</strong>:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="c1"># For Linux (generic)</span>
-</span></span><span class="line"><span class="cl">wget https://github.com/lh3/bwa/releases/download/v0.7.17/bwa-0.7.17.tar.bz2
-</span></span><span class="line"><span class="cl">tar -xvjf bwa-0.7.17.tar.bz2
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> bwa-0.7.17
-</span></span><span class="line"><span class="cl">make
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">  <span class="c1"># For Linux (generic)</span>
+</span></span><span class="line"><span class="cl">  wget https://github.com/lh3/bwa/releases/download/v0.7.17/bwa-0.7.17.tar.bz2
+</span></span><span class="line"><span class="cl">  tar -xvjf bwa-0.7.17.tar.bz2
+</span></span><span class="line"><span class="cl">  <span class="nb">cd</span> bwa-0.7.17
+</span></span><span class="line"><span class="cl">  make
+</span></span><span class="line"><span class="cl">  <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># For MacOS (with Homebrew)</span>
-</span></span><span class="line"><span class="cl">brew install bwa
+</span></span><span class="line"><span class="cl">  <span class="c1"># For MacOS (with Homebrew)</span>
+</span></span><span class="line"><span class="cl">  brew install bwa
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># For MacOS (without Homebrew)</span>
-</span></span><span class="line"><span class="cl">wget https://github.com/lh3/bwa/releases/download/v0.7.17/bwa-0.7.17.tar.bz2
-</span></span><span class="line"><span class="cl">tar -xvjf bwa-0.7.17.tar.bz2
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> bwa-0.7.17
-</span></span><span class="line"><span class="cl">make
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span>
+</span></span><span class="line"><span class="cl">  <span class="c1"># For MacOS (without Homebrew)</span>
+</span></span><span class="line"><span class="cl">  wget https://github.com/lh3/bwa/releases/download/v0.7.17/bwa-0.7.17.tar.bz2
+</span></span><span class="line"><span class="cl">  tar -xvjf bwa-0.7.17.tar.bz2
+</span></span><span class="line"><span class="cl">  <span class="nb">cd</span> bwa-0.7.17
+</span></span><span class="line"><span class="cl">  make
+</span></span><span class="line"><span class="cl">  <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># For Windows (using WSL)</span>
-</span></span><span class="line"><span class="cl">wget https://github.com/lh3/bwa/releases/download/v0.7.17/bwa-0.7.17.tar.bz2
-</span></span><span class="line"><span class="cl">tar -xvjf bwa-0.7.17.tar.bz2
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> bwa-0.7.17
-</span></span><span class="line"><span class="cl">make
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span>
-</span></span></code></pre></div></main>
+</span></span><span class="line"><span class="cl">  <span class="c1"># For Windows (using WSL)</span>
+</span></span><span class="line"><span class="cl">  wget https://github.com/lh3/bwa/releases/download/v0.7.17/bwa-0.7.17.tar.bz2
+</span></span><span class="line"><span class="cl">  tar -xvjf bwa-0.7.17.tar.bz2
+</span></span><span class="line"><span class="cl">  <span class="nb">cd</span> bwa-0.7.17
+</span></span><span class="line"><span class="cl">  make
+</span></span><span class="line"><span class="cl">  <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$PWD</span></span></span></code></pre></div>
+</div>
+<style>
+  .tab-button {
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+
+  .tab-button.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+
+  h3, h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+  }
+
+  ul {
+    margin-top: 5px;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+</style>
+<script>
+  function showSection(section) {
+    document.getElementById('realtime').style.display = 'none';
+    document.getElementById('workedExample').style.display = 'none';
+
+    document.getElementById('realtimeButton').classList.remove('active');
+    document.getElementById('workedExampleButton').classList.remove('active');
+
+    if(section === 'realtime') {
+      document.getElementById('realtime').style.display = 'block';
+      document.getElementById('realtimeButton').classList.add('active');
+    } else if(section === 'workedExample') {
+      document.getElementById('workedExample').style.display = 'block';
+      document.getElementById('workedExampleButton').classList.add('active');
+    }
+  }
+
+  // Set default section to display
+  showSection('workedExample');
+</script>
+<p>EOF</p>
+</main>
         
 
         
